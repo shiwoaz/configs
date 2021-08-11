@@ -25,6 +25,32 @@ set shortmess+=c
 set updatetime=100
 set hidden
 
+" status line
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+hi User1 guifg=#ffdad8  guibg=#880c0e
+hi User0 guifg=#ffffff  guibg=#094afe
+
+set laststatus=2
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=%1*\ %f
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=%0*\%m 
 " === Defalut Setting End 
 
 " Use tab for trigger completion with characters ahead and navigate.
