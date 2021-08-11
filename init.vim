@@ -79,6 +79,9 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Declare the list of plugins.
 
+" THEME
+Plug 'morhetz/gruvbox'
+
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -97,6 +100,8 @@ Plug 'sheerun/vim-polyglot'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+" THEME  
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " === vim-illuminate
 let g:Illuminate_delay = 550
