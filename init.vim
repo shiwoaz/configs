@@ -164,6 +164,7 @@ endfunction
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>aw  <Plug>(coc-codeaction-selected)w
 
+
 " GitGutter
 set updatetime=100
 let g:gitgutter_sign_allow_clobber = 0
