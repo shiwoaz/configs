@@ -99,7 +99,7 @@ endfunction
 " Symbol renaming.
 nmap <LEADER>frn <Plug>(coc-rename)
 
-
+" ================================= Plug Start =================================================
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
@@ -120,11 +120,15 @@ Plug 'https://github.com/tpope/vim-surround.git'
 " auto selected 
 Plug 'gcmt/wildfire.vim'
 
+" Git
+Plug 'airblade/vim-gitgutter'
+
 " code plug
 Plug 'sheerun/vim-polyglot'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+" ================================= Plug End =================================================
 
 " THEME  
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -140,6 +144,17 @@ endfunction
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>aw  <Plug>(coc-codeaction-selected)w
 
+" GitGutter
+set updatetime=100
+let g:gitgutter_sign_allow_clobber = 0
+let g:gitgutter_map_keys = 0
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_preview_win_floating = 1
+let g:gitgutter_sign_added = '▎'
+let g:gitgutter_sign_modified = '░'
+let g:gitgutter_sign_removed = '▏'
+let g:gitgutter_sign_removed_first_line = '▔'
+let g:gitgutter_sign_modified_removed = '▒'
 
 noremap tt :CocCommand explorer<CR>
 noremap ts :CocCommand translator.popup<CR>
