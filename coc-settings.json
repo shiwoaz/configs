@@ -38,7 +38,11 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
-  "coc.preferences.formatOnSaveFiletypes": ["json"],
+  "coc.preferences.formatOnSaveFiletypes": ["json","javascipt","javascriptreact","typescript","typescriptreact"],
+  "coc.preferences.formatOnType": true,
+  "tsserver.formatOnType": true,
   "languageserver": {},
-  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "eslint.autoFixOnSave": true,
+  "prettier.disableSuccessMessage": true
 }

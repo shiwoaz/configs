@@ -110,6 +110,7 @@ Plug 'morhetz/gruvbox'
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
 
 " General Highlighter
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -117,6 +118,7 @@ Plug 'RRethy/vim-illuminate'
 
 " complete quto.
 Plug 'https://github.com/tpope/vim-surround.git'
+
 " auto selected 
 Plug 'gcmt/wildfire.vim'
 
@@ -126,12 +128,30 @@ Plug 'airblade/vim-gitgutter'
 " code plug
 Plug 'sheerun/vim-polyglot'
 
+" JavaScript && TypeScript
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 " ================================= Plug End =================================================
 
+" enable these when get in JS/TS file
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+
 " THEME  
 autocmd vimenter * ++nested colorscheme gruvbox
+
+" Hidden Highlighter
+noremap C :noh<CR>
+
 
 " === vim-illuminate
 let g:Illuminate_delay = 550
