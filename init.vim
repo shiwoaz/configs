@@ -19,6 +19,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+filetype plugin indent on
 " coc recommend
 set shortmess+=c
 set updatetime=100
@@ -89,6 +90,9 @@ Plug 'RRethy/vim-illuminate'
 Plug 'https://github.com/tpope/vim-surround.git'
 " auto selected 
 Plug 'gcmt/wildfire.vim'
+
+" code plug
+Plug 'sheerun/vim-polyglot'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

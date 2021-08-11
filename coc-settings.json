@@ -39,5 +39,6 @@
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
   "coc.preferences.formatOnSaveFiletypes": ["json"],
-  "languageserver": {}
+  "languageserver": {},
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
 }
