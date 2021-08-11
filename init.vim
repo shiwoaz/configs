@@ -170,6 +170,13 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>aw  <Plug>(coc-codeaction-selected)w
 
 
+noremap Q :q<CR>
+noremap < <<
+noremap > >>
+
+vnoremap Y "+y
+
+
 " GitGutter
 set updatetime=100
 let g:gitgutter_sign_allow_clobber = 0
