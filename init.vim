@@ -14,6 +14,11 @@ let g:mapleader=" "
 syntax on
 set number
 set relativenumber
+set novisualbell
+set cursorline
+set guicursor=
+set mouse=a
+set showmode
 " tab space 2
 set tabstop=2
 set softtabstop=2
