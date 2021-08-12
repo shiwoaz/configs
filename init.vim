@@ -19,10 +19,14 @@ set cursorline
 set guicursor=
 set mouse=a
 set showmode
+set scrolloff=4
 " tab space 2
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+
+set termguicolors
+set encoding=UTF-8
 
 filetype plugin indent on
 " coc recommend
@@ -31,31 +35,13 @@ set updatetime=100
 set hidden
 
 " status line
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
 
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
 
-hi User1 guifg=#ffdad8  guibg=#880c0e
-hi User0 guifg=#ffffff  guibg=#094afe
 
-set laststatus=2
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=%1*\ %f
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=%0*\%m 
+
+
+
+"
 " === Defalut Setting End 
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -130,6 +116,17 @@ Plug 'gcmt/wildfire.vim'
 " Git
 Plug 'airblade/vim-gitgutter'
 
+" Tabline
+Plug 'ryanoasis/vim-devicons'
+Plug 'bagrat/vim-buffet'
+
+" Taglist
+Plug 'liuchengxu/vista.vim'
+
+" Status line
+Plug 'theniceboy/eleline.vim'
+Plug 'ojroques/vim-scrollstatus'
+
 " code plug
 Plug 'sheerun/vim-polyglot'
 
@@ -157,6 +154,16 @@ autocmd vimenter * ++nested colorscheme gruvbox
 " Hidden Highlighter
 noremap C :noh<CR>
 
+" Normal change key
+noremap Q :q<CR>
+noremap < <<
+noremap > >>
+
+noremap J 10j
+noremap K 10k
+
+vnoremap Y "+y
+
 
 " === vim-illuminate
 let g:Illuminate_delay = 550
@@ -169,12 +176,6 @@ endfunction
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>aw  <Plug>(coc-codeaction-selected)w
 
-
-noremap Q :q<CR>
-noremap < <<
-noremap > >>
-
-vnoremap Y "+y
 
 
 " GitGutter
@@ -189,10 +190,33 @@ let g:gitgutter_sign_removed = '▏'
 let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '▒'
 
+
 noremap tt :CocCommand explorer<CR>
 noremap ts :CocCommand translator.popup<CR>
 
 
+" Switch tabs
+nmap <leader>1 <Plug>BuffetSwitch(1)
+nmap <leader>2 <Plug>BuffetSwitch(2)
+nmap <leader>3 <Plug>BuffetSwitch(3)
+nmap <leader>4 <Plug>BuffetSwitch(4)
+nmap <leader>5 <Plug>BuffetSwitch(5)
+nmap <leader>6 <Plug>BuffetSwitch(6)
+nmap <leader>7 <Plug>BuffetSwitch(7)
+nmap <leader>8 <Plug>BuffetSwitch(8)
+nmap <leader>9 <Plug>BuffetSwitch(9)
+nmap <leader>0 <Plug>BuffetSwitch(10)
+
+let g:buffet_show_index=1
+let g:buffet_use_devicons=1
+let g:buffet_powerline_separators = 1
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+" Note: Make sure the function is defined before `vim-buffet` is loaded.
+function! g:BuffetSetCustomColors()
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=19  guibg=f5f5dc guifg=1034a6
+endfunction
 " === Formatting
 "  Elixir
 autocmd FileType elixir setlocal  formatprg = mix\ format\ -
