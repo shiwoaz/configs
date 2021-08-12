@@ -215,7 +215,8 @@ let g:buffet_left_trunc_icon = "\uf0a8"
 let g:buffet_right_trunc_icon = "\uf0a9"
 " Note: Make sure the function is defined before `vim-buffet` is loaded.
 function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=19  guibg=f5f5dc guifg=1034a6
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=19  guibg=#f5f5dc guifg=#1034a6
+  hi! BuffetTab cterm=NONE ctermbg=5  ctermfg=19 guibg=#03dbfc 
 endfunction
 " === Formatting
 "  Elixir
