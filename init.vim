@@ -124,13 +124,16 @@ Plug 'mg979/vim-xtabline'
 " Taglist
 Plug 'liuchengxu/vista.vim'
 
+" Debugger
+Plug 'puremourning/vimspector'
+
 " Status line
 Plug 'theniceboy/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
 
 " markdown
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown' }
 
 " FZF
 Plug 'junegunn/fzf.vim'
@@ -230,7 +233,32 @@ let g:xtabline_settings.enable_persistance = 0
 let g:xtabline_settings.last_open_first = 1
 
 " FZF
-nmap <C-p> :Files<CR>
+nmap Fi :Files<CR>
+nmap Rg :Rg<CR>
+nmap Bl :BLines<CR>
+let g:fzf_layout={'down': '40%'}
+
+" Debugger
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" vista
+noremap <LEADER>v :Vista!!<CR>
+noremap <c-t> :silent! Vista finder coc<CR>
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_default_executive = 'coc'
+let g:vista_fzf_preview = ['right:50%']
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+" function! NearestMethodOrFunction() abort
+" 	return get(b:, 'vista_nearest_method_or_function', '')
+" endfunction
+" set statusline+=%{NearestMethodOrFunction()}
+" autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+let g:scrollstatus_size = 15
 
 " undotree
 noremap D :UndotreeToggle<CR>
