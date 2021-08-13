@@ -128,6 +128,10 @@ Plug 'liuchengxu/vista.vim'
 Plug 'theniceboy/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
 
+" markdown
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+
 " FZF
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -172,6 +176,8 @@ noremap J 10j
 noremap K 10k
 
 vnoremap Y "+y
+
+" markdown
 
 
 " === vim-illuminate
