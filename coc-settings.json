@@ -44,5 +44,11 @@
   "languageserver": {},
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "eslint.autoFixOnSave": true,
-  "prettier.disableSuccessMessage": true
+  "prettier.disableSuccessMessage": true,
+  "explorer.icon.enableNerdfont": true ,
+  "explorer.width":38,
+  "explorer.quitOnOpen": true,
+ "explorer.position":"left",
+ "explorer.file.showHiddenFiles": true
+
 }

@@ -37,10 +37,6 @@ set hidden
 " status line
 
 
-
-
-
-
 "
 " === Defalut Setting End 
 
@@ -97,7 +93,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Declare the list of plugins.
 
 " THEME
-Plug 'morhetz/gruvbox'
+Plug 'ajmwagar/vim-deus' 
+"Plug 'morhetz/gruvbox'
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -108,7 +105,7 @@ Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'RRethy/vim-illuminate'
 
 " complete quto.
-Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'tpope/vim-surround'
 
 " auto selected 
 Plug 'gcmt/wildfire.vim'
@@ -118,7 +115,11 @@ Plug 'airblade/vim-gitgutter'
 
 " Tabline
 Plug 'ryanoasis/vim-devicons'
-Plug 'bagrat/vim-buffet'
+Plug 'mg979/vim-xtabline'
+"Plug 'pacha/vem-tabline'
+"Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'romgrk/barbar.nvim'
+"Plug 'bagrat/vim-buffet'
 
 " Taglist
 Plug 'liuchengxu/vista.vim'
@@ -127,8 +128,15 @@ Plug 'liuchengxu/vista.vim'
 Plug 'theniceboy/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
 
+" FZF
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 " code plug
 Plug 'sheerun/vim-polyglot'
+
+" undotree
+Plug 'mbbill/undotree'
 
 " JavaScript && TypeScript
 Plug 'pangloss/vim-javascript'
@@ -149,10 +157,11 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 
 " THEME  
-autocmd vimenter * ++nested colorscheme gruvbox
+"autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme deus
 
 " Hidden Highlighter
-noremap C :noh<CR>
+noremap <silent>  C :noh<CR>
 
 " Normal change key
 noremap Q :q<CR>
@@ -196,28 +205,30 @@ noremap ts :CocCommand translator.popup<CR>
 
 
 " Switch tabs
-nmap <leader>1 <Plug>BuffetSwitch(1)
-nmap <leader>2 <Plug>BuffetSwitch(2)
-nmap <leader>3 <Plug>BuffetSwitch(3)
-nmap <leader>4 <Plug>BuffetSwitch(4)
-nmap <leader>5 <Plug>BuffetSwitch(5)
-nmap <leader>6 <Plug>BuffetSwitch(6)
-nmap <leader>7 <Plug>BuffetSwitch(7)
-nmap <leader>8 <Plug>BuffetSwitch(8)
-nmap <leader>9 <Plug>BuffetSwitch(9)
-nmap <leader>0 <Plug>BuffetSwitch(10)
+nnoremap <leader>1 :1tabnext<CR>
+nnoremap <leader>2 :2tabnext<CR>
+nnoremap <leader>3 :3tabnext<CR>
+nnoremap <leader>4 :4tabnext<CR>
+nnoremap <leader>5 :5tabnext<CR>
+nnoremap <leader>6 :6tabnext<CR>
+nnoremap <leader>7 :7tabnext<CR>
+nnoremap <leader>8 :8tabnext<CR>
+nnoremap <leader>9 :9tabnext<CR>
+noremap tp :-tabnext<CR>
+noremap tn :+tabnext<CR>
+" === xtabline
+let g:xtabline_settings = {}
+let g:xtabline_settings.enable_mappings = 0
+let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
+let g:xtabline_settings.enable_persistance = 0
+let g:xtabline_settings.last_open_first = 1
 
-let g:buffet_show_index=1
-let g:buffet_use_devicons=1
-let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
-" Note: Make sure the function is defined before `vim-buffet` is loaded.
-function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=19  guibg=#f5f5dc guifg=#1034a6
-  hi! BuffetTab cterm=NONE ctermbg=5  ctermfg=19 guibg=#03dbfc 
-endfunction
+" FZF
+nmap <C-p> :Files<CR>
+
+" undotree
+noremap D :UndotreeToggle<CR>
+
 " === Formatting
 "  Elixir
 autocmd FileType elixir setlocal  formatprg = mix\ format\ -
