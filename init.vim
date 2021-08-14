@@ -20,6 +20,7 @@ set guicursor=
 set mouse=a
 set showmode
 set scrolloff=4
+set backspace=indent,eol,start
 " tab space 2
 set tabstop=2
 set softtabstop=2
@@ -57,6 +58,8 @@ endfunction
 " Code suggest
 inoremap <silent><expr> <c-s> coc#refresh()
 
+" cursorline
+
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -82,6 +85,19 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Windows
+noremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap sj :set splitbelow<CR>:split<CR>
+noremap sh :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap sl :set splitright<CR>:vsplit<CR>
+noremap <up> :res +5<CR>
+noremap <down> :res -5<CR>
+noremap <left> :vertical resize-5<CR>
+noremap <right> :vertical resize+5<CR>
+noremap <LEADER>k <C-w>k
+noremap <LEADER>j <C-w>j
+noremap <LEADER>h <C-w>h
+noremap <LEADER>l <C-w>l
 
 " Symbol renaming.
 nmap <LEADER>frn <Plug>(coc-rename)
@@ -125,7 +141,7 @@ Plug 'mg979/vim-xtabline'
 Plug 'liuchengxu/vista.vim'
 
 " Debugger
-Plug 'puremourning/vimspector'
+"Plug 'puremourning/vimspector', {'do': './install_gadget.py --enable-go'}
 
 " Status line
 Plug 'theniceboy/eleline.vim'
@@ -133,7 +149,7 @@ Plug 'ojroques/vim-scrollstatus'
 
 " markdown
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " FZF
 Plug 'junegunn/fzf.vim'
@@ -181,7 +197,7 @@ noremap K 10k
 vnoremap Y "+y
 
 " markdown
-
+let g:mkdp_auto_start =1
 
 " === vim-illuminate
 let g:Illuminate_delay = 550
@@ -241,6 +257,7 @@ let g:fzf_layout={'down': '40%'}
 " Debugger
 let g:vimspector_enable_mappings = 'HUMAN'
 
+
 " vista
 noremap <LEADER>v :Vista!!<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
@@ -265,7 +282,7 @@ noremap D :UndotreeToggle<CR>
 
 " === Formatting
 "  Elixir
-autocmd FileType elixir setlocal  formatprg = mix\ format\ -
+"autocmd FileType elixir setlocal  formatprg = mix\ format\ -
 
 " === coc.nvim
 

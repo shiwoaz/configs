@@ -38,7 +38,7 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
-  "coc.preferences.formatOnSaveFiletypes": ["json","javascipt","javascriptreact","typescript","typescriptreact"],
+  "coc.preferences.formatOnSaveFiletypes": ["json","javascipt","javascriptreact","typescript","typescriptreact","elixir"],
   "coc.preferences.formatOnType": true,
   "tsserver.formatOnType": true,
   "languageserver": {},
