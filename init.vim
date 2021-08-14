@@ -28,7 +28,7 @@ set shiftwidth=2
 
 set termguicolors
 set encoding=UTF-8
-
+set modifiable
 filetype plugin indent on
 " coc recommend
 set shortmess+=c
@@ -199,6 +199,9 @@ noremap K 10k
 
 vnoremap Y "+y
 
+noremap ter :set splitbelow<CR>:split<CR>:terminal<CR>a
+
+
 " markdown
 let g:mkdp_auto_start =1
 
@@ -304,5 +307,9 @@ let g:coc_global_extensions = [
   \ 'coc-translator',
 	\ 'coc-vetur',
 	\ 'coc-snippets',
-	\ 'coc-elixir']
+	\ 'coc-elixir',
+  \ 'coc-html',
+  \ 'coc-stylelint',
+  \ 'coc-jest',
+  \ 'coc-css']
 " === coc.nvim End
