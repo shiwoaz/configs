@@ -36,6 +36,8 @@ set updatetime=100
 set hidden
 
 " status line
+let g:moonflyWithNerdIcon=1
+let g:moonflyWithGitBranchCharacter=1
 
 
 "
@@ -144,8 +146,9 @@ Plug 'liuchengxu/vista.vim'
 "Plug 'puremourning/vimspector', {'do': './install_gadget.py --enable-go'}
 
 " Status line
-Plug 'theniceboy/eleline.vim'
-Plug 'ojroques/vim-scrollstatus'
+"Plug 'theniceboy/eleline.vim'
+"Plug 'ojroques/vim-scrollstatus'
+Plug 'bluz71/vim-moonfly-statusline'
 
 " markdown
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
