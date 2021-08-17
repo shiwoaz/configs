@@ -203,7 +203,7 @@ noremap ter :set splitbelow<CR>:split<CR>:terminal<CR>a
 
 
 " markdown
-let g:mkdp_auto_start =1
+let g:mkdp_auto_start =0
 
 " === vim-illuminate
 let g:Illuminate_delay = 550
