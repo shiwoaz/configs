@@ -113,6 +113,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " THEME
 Plug 'ajmwagar/vim-deus' 
 "Plug 'morhetz/gruvbox'
+Plug 'mhinz/vim-startify'
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
