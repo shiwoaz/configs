@@ -129,6 +129,9 @@ Plug 'tpope/vim-surround'
 " auto selected 
 Plug 'gcmt/wildfire.vim'
 
+" graphql
+Plug 'jparise/vim-graphql'
+
 " Git
 Plug 'airblade/vim-gitgutter'
 
@@ -173,6 +176,9 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
+
+" C
+Plug 'Chiel92/vim-autoformat'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -290,6 +296,9 @@ noremap D :UndotreeToggle<CR>
 " === Formatting
 "  Elixir
 "autocmd FileType elixir setlocal  formatprg = mix\ format\ -
+
+"C
+au BufWrite *.c :Autoformat
 
 " === coc.nvim
 
