@@ -39,8 +39,6 @@ set hidden
 let g:moonflyWithNerdIcon=1
 let g:moonflyWithGitBranchCharacter=1
 
-
-"
 " === Defalut Setting End 
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -164,6 +162,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " code plug
 Plug 'sheerun/vim-polyglot'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " undotree
 Plug 'mbbill/undotree'
@@ -179,6 +179,9 @@ Plug 'jparise/vim-graphql'
 
 " C
 Plug 'Chiel92/vim-autoformat'
+
+" DEBUGGER
+Plug 'puremourning/vimspector'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -223,7 +226,8 @@ endfunction
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>aw  <Plug>(coc-codeaction-selected)w
 
-
+" Vim-Spector
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " GitGutter
 set updatetime=100
@@ -269,6 +273,7 @@ let g:fzf_layout={'down': '40%'}
 
 " Debugger
 let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB', 'vscode-go' ]
 
 
 " vista
@@ -299,6 +304,12 @@ noremap D :UndotreeToggle<CR>
 
 "C
 au BufWrite *.c :Autoformat
+
+" Code Snippets
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-F>"
+let g:UltiSnipsJumpBackwardTrigger="<c-B>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " === coc.nvim
 
