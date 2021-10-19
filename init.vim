@@ -180,6 +180,9 @@ Plug 'jparise/vim-graphql'
 " C
 Plug 'Chiel92/vim-autoformat'
 
+" comment
+Plug 'preservim/nerdcommenter'
+
 " DEBUGGER
 Plug 'puremourning/vimspector'
 
@@ -310,6 +313,9 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-F>"
 let g:UltiSnipsJumpBackwardTrigger="<c-B>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+" comment
+
 
 " === coc.nvim
 

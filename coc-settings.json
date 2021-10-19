@@ -61,5 +61,6 @@
   "explorer.quitOnOpen": true,
   "explorer.position":"left",
   "explorer.file.showHiddenFiles": true,
-  "explorer.openAction.strategy": "tab"
+  "explorer.openAction.strategy": "tab",
+  "translator.engines": ["bing"]
 }
