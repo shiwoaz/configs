@@ -186,6 +186,9 @@ Plug 'preservim/nerdcommenter'
 " DEBUGGER
 Plug 'puremourning/vimspector'
 
+" GITHUB
+Plug 'github/copilot.vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 " ================================= Plug End =================================================
