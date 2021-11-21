@@ -47,10 +47,10 @@
       "rootPatterns": [".ccls", ".ccls-root", "compile_commands.json", ".git/", ".hg/"],
       "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
       "initializationOptions": {
-				"cache": {
-					"directory": "/tmp/ccls"
-				}
-			}
+        "cache": {
+          "directory": "/tmp/ccls"
+        } 
+      }
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
