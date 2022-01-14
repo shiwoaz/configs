@@ -112,6 +112,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'ajmwagar/vim-deus' 
 "Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
+Plug 'artanikin/vim-synthwave84'
 
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -201,6 +202,7 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " THEME  
 "autocmd vimenter * ++nested colorscheme gruvbox
 colorscheme deus
+" colorscheme synthwave84
 
 " Hidden Highlighter
 noremap <silent>  C :noh<CR>
@@ -341,5 +343,6 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-stylelint',
   \ 'coc-jest',
-  \ 'coc-css']
+  \ 'coc-css',
+  \ 'coc-cmake']
 " === coc.nvim End
