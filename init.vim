@@ -344,5 +344,6 @@ let g:coc_global_extensions = [
   \ 'coc-stylelint',
   \ 'coc-jest',
   \ 'coc-css',
-  \ 'coc-cmake']
+  \ 'coc-cmake',
+  \ 'coc-rls']
 " === coc.nvim End
